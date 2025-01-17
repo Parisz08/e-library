@@ -26,7 +26,7 @@ class AuthController
 
         if ($user) {
             $loggedUser = $this->userModel->getUserByPhone($phone);
-            var_dump($loggedUser);
+            // var_dump($loggedUser);
             session_start();
             $_SESSION['user'] = $loggedUser;
             header('Location: ../views/dashboard.php');
@@ -41,5 +41,16 @@ class AuthController
         session_destroy();
         header('Location: ../views/login.php');
         exit;
+    }
+
+    public function login($phone, $password) {
+        $user = $this->userModel->login($phone, $password);
+
+        if ($user) {
+            session_start();
+            $_SESSION['user'] = $user;
+            header('Location: ../views/dashboard.php');
+            exit();
+        }
     }
 }

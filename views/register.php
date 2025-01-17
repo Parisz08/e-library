@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errorMessage = $authController->register($_POST['name'], $_POST['phone'], $_POST['password'], $_POST['address']);
 }
 
+include 'partials/header.php';
 ?>
 
 <h1>register</h1>
@@ -30,3 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button type="submit">Register</button>
 </form>
 <a href="login.php">Login</a>
+
+<?php 
+include 'partials/footer.php';
+?>

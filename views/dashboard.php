@@ -13,9 +13,15 @@ if (isset($_POST['logout'])) {
     $authController->logout();
 }
 
+include 'partials/header.php';
 ?>
+
 <h1>Dashboard</h1>
 <h2>Welcome, <?= $user['name'] ?> </h2>
 <form method="POST">
     <button type="submit" name="logout">Logout</button>
 </form>
+
+<?php 
+include 'partials/footer.php';
+?>
