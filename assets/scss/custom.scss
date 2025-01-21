@@ -1,0 +1,14 @@
+$primary: #a26900;
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$custom-theme-colors: (
+    "navy": #001f3f,
+    "cyan": #00ffff,
+    "teal": #008080
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
